@@ -1,7 +1,6 @@
 (() => {
   "use strict";
   const M = window.MENU;
-  const SYNC = (window.SYNC_URL || "").replace(/\/+$/, "");
   const $app = document.getElementById("app");
   const $top = document.getElementById("top");
   const $badge = document.getElementById("badge");
@@ -42,17 +41,14 @@
     return r;
   }
 
-  /* =================== Estado de la compra =================== */
+  /* =================== Estado de la compra (solo en este móvil) =================== */
   const LKEY = "compra:" + M.id;
-  const PKEY = "pendiente:" + M.id;
-  let estado = cargar(LKEY, { checked: {}, extras: {} });
-  let pendiente = cargar(PKEY, []);
-  let syncEstado = SYNC ? "off" : "local";
+  let estado = normaliza(cargar(LKEY, null));
   let soloPendientes = cargar("filtro", false);
 
   function cargar(k, def) { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? def : v; } catch { return def; } }
-  function guardar() { localStorage.setItem(LKEY, JSON.stringify(estado)); localStorage.setItem(PKEY, JSON.stringify(pendiente)); }
   function normaliza(s) { s = s || {}; return { checked: s.checked || {}, extras: s.extras || {} }; }
+  function guardar() { localStorage.setItem(LKEY, JSON.stringify(estado)); pintarBadge(); }
 
   const itemsBase = M.compra.flatMap((s) => s.items.map(([n, q]) => ({ id: slug(s.seccion + "-" + n), n, q, s: s.seccion })));
   const extrasLista = () => Object.entries(estado.extras).map(([id, e]) => ({ id, n: e.n, q: "", t: e.t || 0 })).sort((a, b) => a.t - b.t);
@@ -60,65 +56,6 @@
     const todos = itemsBase.concat(extrasLista());
     const hechos = todos.filter((i) => estado.checked[i.id]).length;
     return { total: todos.length, hechos };
-  }
-
-  function aplicarRuta(path, data, merge) {
-    const parts = path.split("/").filter(Boolean);
-    if (!parts.length) { estado = merge ? normaliza(Object.assign({}, estado, data)) : normaliza(data); return; }
-    let o = estado;
-    for (let i = 0; i < parts.length - 1; i++) { o[parts[i]] = o[parts[i]] || {}; o = o[parts[i]]; }
-    const last = parts[parts.length - 1];
-    if (data === null) delete o[last];
-    else if (merge && typeof data === "object") o[last] = Object.assign(o[last] || {}, data);
-    else o[last] = data;
-    estado = normaliza(estado);
-  }
-
-  function escribir(path, valor) {
-    aplicarRuta(path, valor);
-    if (SYNC) { pendiente.push([path, valor]); flush(); }
-    guardar();
-    pintarBadge();
-  }
-
-  let flushing = false;
-  async function flush() {
-    if (!SYNC || flushing || !pendiente.length) return;
-    flushing = true;
-    try {
-      while (pendiente.length) {
-        const [path, valor] = pendiente[0];
-        const url = `${SYNC}/listas/${encodeURIComponent(M.id)}${path}.json`;
-        const res = await fetch(url, valor === null ? { method: "DELETE" } : { method: "PUT", body: JSON.stringify(valor) });
-        if (!res.ok) throw new Error(res.status);
-        pendiente.shift();
-        guardar();
-      }
-    } catch { setSync("off"); }
-    flushing = false;
-  }
-
-  function setSync(s) { syncEstado = s; const el = document.querySelector(".sync"); if (el) { el.className = "sync " + s; el.textContent = textoSync(); } }
-  const textoSync = () => ({ on: "Compartida en vivo", off: "Sin conexión · se enviará luego", local: "Solo en este móvil" }[syncEstado]);
-
-  function conectar() {
-    if (!SYNC || !window.EventSource) return;
-    const es = new EventSource(`${SYNC}/listas/${encodeURIComponent(M.id)}.json`);
-    const onEv = (merge) => (e) => {
-      const { path, data } = JSON.parse(e.data);
-      aplicarRuta(path, data, merge);
-      // Reaplica lo que aún no ha llegado al servidor para no perder marcas hechas sin conexión.
-      for (const [p, v] of pendiente) aplicarRuta(p, v);
-      guardar();
-      setSync("on");
-      flush();
-      if (ruta().vista === "compra") pintarCompra(true);
-      pintarBadge();
-    };
-    es.addEventListener("put", onEv(false));
-    es.addEventListener("patch", onEv(true));
-    es.onerror = () => setSync("off");
-    window.addEventListener("online", flush);
   }
 
   function pintarBadge() {
@@ -210,7 +147,7 @@
     const scroll = window.scrollY;
     cabecera("Compra", `${esc(M.titulo)} · <b>para 2</b>`);
     $top.insertAdjacentHTML("beforeend", `<div class="progreso"><div class="inner">
-      <div class="progreso-txt"><span><b>${hechos}</b> de ${total} en el carro</span><span class="sync ${syncEstado}">${textoSync()}</span></div>
+      <div class="progreso-txt"><span><b>${hechos}</b> de ${total} en el carro</span><span>${hechos === total ? "Lista completa" : `Faltan ${total - hechos}`}</span></div>
       <div class="barra ${hechos === total ? "llena" : ""}"><i style="width:${total ? (hechos / total) * 100 : 0}%"></i></div></div></div>`);
 
     const secciones = M.compra.map((s) => ({ seccion: s.seccion, items: itemsBase.filter((i) => i.s === s.seccion) }));
@@ -229,19 +166,20 @@
       </div>
       ${cuerpo || `<section class="modulo"><p class="vacia">Todo en el carro. ¡A casa!</p></section>`}
       <div class="pie"><button type="button" class="btn-quiet" id="reset">Empezar la lista de nuevo</button>
-      <p>${syncEstado === "local" ? "Las marcas se guardan en este móvil." : "Las marcas se comparten entre los dos móviles."} Cuando llegue un menú nuevo, la lista se renueva sola.</p></div>`;
+      <p>Las marcas se guardan en este móvil. Cuando llegue un menú nuevo, la lista empieza de cero sola.</p></div>`;
 
     $app.querySelectorAll(".art").forEach((b) => b.addEventListener("click", () => {
       const id = b.dataset.id, on = !estado.checked[id];
-      escribir(`/checked/${id}`, on ? true : null);
+      if (on) estado.checked[id] = true; else delete estado.checked[id];
+      guardar();
       if (soloPendientes) { pintarCompra(true); return; }
       b.setAttribute("aria-checked", on);
       actualizarProgreso();
     }));
     $app.querySelectorAll("[data-quitar]").forEach((b) => b.addEventListener("click", () => {
       const id = b.dataset.quitar;
-      escribir(`/checked/${id}`, null);
-      escribir(`/extras/${id}`, null);
+      delete estado.checked[id]; delete estado.extras[id];
+      guardar();
       pintarCompra(true);
     }));
     document.getElementById("f-anadir").addEventListener("submit", (e) => {
@@ -249,20 +187,21 @@
       const inp = e.target.n, n = inp.value.trim();
       if (!n) { inp.focus(); return; }
       const id = "extra-" + Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
-      escribir(`/extras/${id}`, { n, t: Date.now() });
+      estado.extras[id] = { n, t: Date.now() };
+      guardar();
       pintarCompra(true);
       document.getElementById("nuevo").focus();
     });
     document.getElementById("filtro").addEventListener("click", () => { soloPendientes = !soloPendientes; localStorage.setItem("filtro", soloPendientes); pintarCompra(true); });
     document.getElementById("reset").addEventListener("click", () => {
       const dlg = document.getElementById("confirm");
-      document.getElementById("confirm-text").textContent = SYNC ? "Se desmarcará todo y se borrará lo añadido, también en el otro móvil." : "Se desmarcará todo y se borrará lo añadido.";
+      document.getElementById("confirm-text").textContent = "Se desmarcará todo y se borrará lo añadido.";
       dlg.returnValue = "";
       dlg.showModal();
       dlg.addEventListener("close", function h() {
         dlg.removeEventListener("close", h);
         if (dlg.returnValue !== "si") return;
-        escribir("/checked", null); escribir("/extras", null);
+        estado = normaliza(null); guardar();
         pintarCompra(true);
       });
     });
@@ -327,7 +266,5 @@
 
   window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); });
   render();
-  conectar();
-  flush();
   if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js").catch(() => {});
 })();

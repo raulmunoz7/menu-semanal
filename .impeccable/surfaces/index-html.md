@@ -15,7 +15,7 @@ THESIS: What we eat today is printed like a Valencian orange-crate label; everyt
 
 OWN-WORLD: Ultramarine #1d2f6f shell (header, tab bar), orange #f07a1a ribbons, leaf green #2e7d3a for done/progress, crate red #c8281e for the primary action, near-white #fbfaf6 ground. Barlow Condensed 800 uppercase for headings and ribbons, Barlow for body. Double-rule frame (3px + 1px) reserved for the label plate. Lists: hairline-ruled modules with small tab headers; one text size per list, rank by weight/case; quantities right-aligned tight; pending in full ink, bought struck and greyed.
 
-STORY: Open the app, see the meal that is due now, tap through to the recipe; in the shop, tick items and see the other person's ticks arrive; add extras; reset next week.
+STORY: Open the app, see the meal that is due now, tap through to the recipe; in the shop, tick items on this phone (no sync, by the user's choice); add extras; reset next week.
 
 FIRST VIEWPORT: Ultramarine header with "Semana · Día" kicker and "Hoy toca" title; below, the current meal as the label plate (ribbon with meal name, dish in condensed caps, food items with quantities, red "Ver receta" when a recipe exists); then "Resto del día" ruled list; fixed ultramarine tab bar with 4 tabs, active in orange.
 

@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Static HTML/CSS/JS, no build step, hosted free on GitHub Pages. Menu and recipe content lives in one data file (`data.js`) that Claude updates and pushes when the user sends new material. Shared shopping-list state syncs between the two phones through a free hosted realtime key-value store (Firebase Realtime Database over its REST/streaming API, no SDK); without that configured the app falls back to per-device storage.
+Static HTML/CSS/JS, no build step, hosted free on GitHub Pages. Menu and recipe content lives in one data file (`data.js`) that Claude updates and pushes when the user sends new material. Shopping-list marks live only on each phone (localStorage). The user explicitly rejected any database or external service, including free hosted ones, so there is no sync between phones.
 
 ## Users
 
@@ -25,12 +25,12 @@ A private household tool, not a product for others. Its only edge is that it hol
 ## Operating Context
 
 - Each week the nutritionist sends a menu and some recipes as PDF or photos. The user forwards them to Claude; Claude transcribes them into `data.js`, derives the shopping list by summing the week's ingredients, and publishes.
-- Shopping: usually one person shops, sometimes both split up; the other may need to see what is already in the trolley. Items get ticked off; extras not on the plan get added by hand.
+- Shopping: usually one person shops, sometimes both split up; the other may need to see what is already in the trolley. Items get ticked off on that phone; extras not on the plan get added by hand. When both shop, they split the sections.
 - Cooking: the recipe is read on a phone at arm's length, often with dirty hands.
 
 ## Capabilities and Constraints
 
-- Views: Today (meals due today), Week (full menu), Shopping list (tickable, shared, add extras, reset for a new week), Recipes (list + detail with ingredients and steps).
+- Views: Today (meals due today), Week (full menu), Shopping list (tickable per phone, add extras, reset for a new week), Recipes (list + detail with ingredients and steps).
 - No accounts, no backend of their own, no cost. Spanish only.
 - The shopping list is derived by Claude from recipe ingredients; quantities are summed where units match.
 - The current plan has five meals a day (desayuno, media mañana, almuerzo, media tarde, cena); the data model allows any number.
