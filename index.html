@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1d2f6f" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Menú" />
+  <title>Nuestro menú</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-180.png" />
+  <link rel="preload" href="assets/fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-hoy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="3.5"/><path d="M2 12h1.5M20.5 12H22"/></symbol>
+      <symbol id="i-semana" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+      <symbol id="i-compra" viewBox="0 0 24 24"><path d="M4 9h16l-1.6 10.2a1 1 0 0 1-1 .8H6.6a1 1 0 0 1-1-.8L4 9Z"/><path d="M8.5 9 12 4l3.5 5M9.5 13v3.5M14.5 13v3.5"/></symbol>
+      <symbol id="i-recetas" viewBox="0 0 24 24"><path d="M5 4.5h10.5a2 2 0 0 1 2 2V20H7a2 2 0 0 1-2-2V4.5Z"/><path d="M5 17.5a2 2 0 0 1 2-2h10.5M9 8.5h5"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5 8 12l7 7"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5l5.5 5.5-5.5 5.5"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="shell-top" id="top"></header>
+  <main id="app" tabindex="-1"></main>
+
+  <nav class="tabbar" aria-label="Secciones">
+    <a href="#hoy" data-tab="hoy"><svg><use href="#i-hoy"/></svg><span>Hoy</span></a>
+    <a href="#semana" data-tab="semana"><svg><use href="#i-semana"/></svg><span>Semana</span></a>
+    <a href="#compra" data-tab="compra"><svg><use href="#i-compra"/></svg><span>Compra</span><b class="badge" id="badge" hidden></b></a>
+    <a href="#recetas" data-tab="recetas"><svg><use href="#i-recetas"/></svg><span>Recetas</span></a>
+  </nav>
+
+  <dialog id="confirm" class="confirm">
+    <form method="dialog">
+      <p id="confirm-text"></p>
+      <div class="confirm-actions">
+        <button value="no" class="btn-quiet">Cancelar</button>
+        <button value="si" class="btn-danger">Vaciar marcas</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

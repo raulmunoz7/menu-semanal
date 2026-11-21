@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T14:19:22+00:00",
+  "title": "Design System: Nuestro menú",
+  "extensions": {
+    "colorMeta": {
+      "ultramar": {
+        "role": "primary",
+        "displayName": "Crate Ultramarine",
+        "canonical": "#1d2f6f",
+        "oklch": "oklch(33.2% 0.113 267.8)",
+        "tonalRamp": [
+          "#04091e",
+          "#162247",
+          "#2c3e75",
+          "#455da1",
+          "#657fc6",
+          "#8ba3e3",
+          "#b5c8f9",
+          "#e1eeff"
+        ]
+      },
+      "ultramar-hondo": {
+        "role": "primary",
+        "displayName": "Deep Ultramarine",
+        "canonical": "#15224f",
+        "oklch": "oklch(27.0% 0.084 268.2)",
+        "tonalRamp": [
+          "#060a19",
+          "#1a233f",
+          "#314069",
+          "#4d5f91",
+          "#6d80b6",
+          "#92a4d3",
+          "#bac9ed",
+          "#e5eeff"
+        ]
+      },
+      "ultramar-claro": {
+        "role": "primary",
+        "displayName": "Faded Ultramarine",
+        "canonical": "#b9c4ea",
+        "oklch": "oklch(82.4% 0.055 272.5)",
+        "tonalRamp": [
+          "#080a14",
+          "#1f2436",
+          "#39405b",
+          "#565f81",
+          "#7781a4",
+          "#9ba4c3",
+          "#c1c8e0",
+          "#e9eefe"
+        ]
+      },
+      "naranja": {
+        "role": "secondary",
+        "displayName": "Valencia Orange",
+        "canonical": "#f07a1a",
+        "oklch": "oklch(70.3% 0.173 52.0)",
+        "tonalRamp": [
+          "#1f0000",
+          "#4a0a00",
+          "#7a1c00",
+          "#a83700",
+          "#cf5c00",
+          "#ec8743",
+          "#ffb586",
+          "#ffe2c4"
+        ]
+      },
+      "naranja-tinta": {
+        "role": "secondary",
+        "displayName": "Burnt Orange Ink",
+        "canonical": "#b4520a",
+        "oklch": "oklch(55.4% 0.146 48.4)",
+        "tonalRamp": [
+          "#1d0200",
+          "#461100",
+          "#732500",
+          "#a03f00",
+          "#c66224",
+          "#e48b5c",
+          "#fbb895",
+          "#ffe4cd"
+        ]
+      },
+      "verde": {
+        "role": "tertiary",
+        "displayName": "Leaf Green",
+        "canonical": "#2e7d3a",
+        "oklch": "oklch(52.5% 0.127 146.3)",
+        "tonalRamp": [
+          "#001001",
+          "#002f09",
+          "#08501a",
+          "#237431",
+          "#499652",
+          "#76b87c",
+          "#a8d8ab",
+          "#d9f8db"
+        ]
+      },
+      "rojo": {
+        "role": "tertiary",
+        "displayName": "Crate Red",
+        "canonical": "#c8281e",
+        "oklch": "oklch(54.1% 0.197 29.1)",
+        "tonalRamp": [
+          "#230000",
+          "#520000",
+          "#850000",
+          "#b70c08",
+          "#e04234",
+          "#fd7665",
+          "#ffaa9a",
+          "#ffdbd0"
+        ]
+      },
+      "papel": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#fbfaf6",
+        "oklch": "oklch(98.5% 0.005 95.1)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#252523",
+          "#43423f",
+          "#62615e",
+          "#83827f",
+          "#a6a5a2",
+          "#cac9c7",
+          "#efeeed"
+        ]
+      },
+      "blanco": {
+        "role": "neutral",
+        "displayName": "Plate White",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "tinta": {
+        "role": "neutral",
+        "displayName": "Press Ink",
+        "canonical": "#1a1c24",
+        "oklch": "oklch(22.8% 0.016 274.1)",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#23252a",
+          "#404249",
+          "#5e616a",
+          "#7f828c",
+          "#a2a5ae",
+          "#c7c9d0",
+          "#edeef3"
+        ]
+      },
+      "tinta-2": {
+        "role": "neutral",
+        "displayName": "Second Ink",
+        "canonical": "#4a4e5c",
+        "oklch": "oklch(42.6% 0.024 272.8)",
+        "tonalRamp": [
+          "#0a0b0f",
+          "#22252d",
+          "#3e414d",
+          "#5c616f",
+          "#7d8291",
+          "#a0a5b2",
+          "#c6c9d3",
+          "#eceef5"
+        ]
+      },
+      "apagado": {
+        "role": "neutral",
+        "displayName": "Spent Grey",
+        "canonical": "#6b6f7a",
+        "oklch": "oklch(54.2% 0.018 269.8)",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#23252b",
+          "#3f424a",
+          "#5d616c",
+          "#7e828d",
+          "#a1a5af",
+          "#c6c9d1",
+          "#eceef3"
+        ]
+      },
+      "filete": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#dcd9d0",
+        "oklch": "oklch(88.5% 0.013 91.5)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262521",
+          "#44423c",
+          "#646159",
+          "#85827a",
+          "#a7a59e",
+          "#cbc9c3",
+          "#f0eeeb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Screen title in the ultramarine header; 3rem from 700px."
+      },
+      "headline": {
+        "displayName": "Plate Headline",
+        "purpose": "Dish or recipe name on the label plate only."
+      },
+      "title": {
+        "displayName": "Module Tab",
+        "purpose": "Ruled section headers over lists."
+      },
+      "label": {
+        "displayName": "Slot Label",
+        "purpose": "Meal-slot names in meal rows; tab labels at 0.8125rem."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Primary red button; quiet and danger at 1rem."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All reading text; names at 600 for rank, same size."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Row details, notes, header subtitle."
+      }
+    },
+    "shadows": [],
+    "borders": [
+      {
+        "name": "plate-frame",
+        "value": "3px solid #1d2f6f, 5px white gap, 1px solid #1d2f6f",
+        "purpose": "Double rule of the label plate only."
+      },
+      {
+        "name": "tab-rule",
+        "value": "3px solid #1d2f6f",
+        "purpose": "Under every module tab header."
+      },
+      {
+        "name": "hairline",
+        "value": "1px solid #dcd9d0",
+        "purpose": "Between list rows."
+      },
+      {
+        "name": "control-stroke",
+        "value": "2px solid #1d2f6f",
+        "purpose": "Inputs, quiet buttons, filters (checkboxes 2.5px)."
+      }
+    ],
+    "focus": {
+      "value": "outline: 3px solid #f07a1a; outline-offset: 2px",
+      "purpose": "All focusable elements."
+    },
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Shared easing for every state change."
+      },
+      {
+        "name": "tick",
+        "value": "140ms (box fill), 220ms (check scale)",
+        "purpose": "Checkbox tick."
+      },
+      {
+        "name": "state",
+        "value": "160ms",
+        "purpose": "Button press, tab and day-picker colour."
+      },
+      {
+        "name": "progress",
+        "value": "260ms",
+        "purpose": "Shopping progress bar width."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0ms",
+        "purpose": "All transitions dropped under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "700px"
+      }
+    ],
+    "layout": {
+      "maxWidth": "640px",
+      "tabBarHeight": "64px",
+      "plateMaxWidthWide": "560px"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one primary action: Ver receta on the label plate.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Ver receta <svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h13M13 6.5l5.5 5.5-5.5 5.5\"/></svg></a>",
+      "css": ".ds-btn-primary{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;background:var(--rojo);color:var(--blanco);text-decoration:none;font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:1.1875rem;line-height:1;letter-spacing:0.08em;border-radius:4px;transition:background-color 160ms var(--ease),transform 160ms var(--ease)}.ds-btn-primary:active{background:#a51f17;transform:translateY(1px)}.ds-btn-primary:focus-visible{outline:3px solid var(--naranja);outline-offset:2px}"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Secondary action: outlined ultramarine.",
+      "html": "<button class=\"ds-btn-quiet\">Cancelar</button>",
+      "css": ".ds-btn-quiet{min-height:48px;padding:0 18px;border:2px solid var(--ultramar);border-radius:4px;background:var(--blanco);color:var(--ultramar);font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:1rem;line-height:1;letter-spacing:0.08em;cursor:pointer}.ds-btn-quiet:focus-visible{outline:3px solid var(--naranja);outline-offset:2px}"
+    },
+    {
+      "name": "Danger Button",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Destructive confirm (reset the shopping list).",
+      "html": "<button class=\"ds-btn-danger\">Vaciar marcas</button>",
+      "css": ".ds-btn-danger{min-height:48px;padding:0 18px;border:0;border-radius:4px;background:var(--rojo);color:var(--blanco);font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:1rem;line-height:1;letter-spacing:0.08em;cursor:pointer}.ds-btn-danger:active{background:#a51f17}.ds-btn-danger:focus-visible{outline:3px solid var(--naranja);outline-offset:2px}"
+    },
+    {
+      "name": "Filter Toggle",
+      "kind": "chip",
+      "refersTo": "filter-toggle",
+      "description": "Pressed-state toggle, e.g. hide bought items.",
+      "html": "<button class=\"ds-filtro\" aria-pressed=\"false\" onclick=\"this.setAttribute('aria-pressed',this.getAttribute('aria-pressed')!=='true')\">Ocultar lo cogido</button>",
+      "css": ".ds-filtro{min-height:52px;padding:0 12px;border:2px solid var(--ultramar);border-radius:4px;background:var(--blanco);color:var(--ultramar);font-family:var(--display);text-transform:uppercase;font-weight:700;font-size:0.9375rem;line-height:1;letter-spacing:0.06em;cursor:pointer}.ds-filtro[aria-pressed=\"true\"]{background:var(--ultramar);color:var(--papel)}.ds-filtro:focus-visible{outline:3px solid var(--naranja);outline-offset:2px}"
+    },
+    {
+      "name": "Add Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Text field fused with an ultramarine add button.",
+      "html": "<form class=\"ds-anadir\" onsubmit=\"return false\"><input placeholder=\"Añadir algo más...\" aria-label=\"Añadir\"><button aria-label=\"Añadir\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"/></svg></button></form>",
+      "css": ".ds-anadir{display:flex;background:var(--blanco);border:2px solid var(--ultramar);border-radius:4px;max-width:320px}.ds-anadir input{flex:1;min-width:0;border:0;background:none;padding:0 12px;min-height:48px;outline:none;font:400 17px var(--texto);color:var(--tinta)}.ds-anadir input::placeholder{color:#6e7280}.ds-anadir button{width:48px;display:grid;place-items:center;border:0;color:var(--blanco);background:var(--ultramar);cursor:pointer}.ds-anadir:focus-within{outline:3px solid var(--naranja);outline-offset:2px}"
+    },
+    {
+      "name": "Label Plate",
+      "kind": "card",
+      "refersTo": "label-plate",
+      "description": "Signature: the current meal or recipe header as a crate label. One per screen, Hoy and recipe only.",
+      "html": "<section class=\"ds-etiqueta\"><div class=\"ds-etiqueta-in\"><span class=\"ds-banderola\">Almuerzo</span><h2>Bol de quinoa con verduritas y huevo</h2><ul class=\"ds-alimentos\"><li><span>Kiwi</span><span>2</span></li></ul><p class=\"ds-para\">Cantidades para los dos</p></div></section>",
+      "css": ".ds-etiqueta{margin:30px 16px 8px;background:var(--blanco);border:3px solid var(--ultramar);padding:5px;max-width:360px}.ds-etiqueta-in{border:1px solid var(--ultramar);padding:26px 18px 18px;position:relative}.ds-banderola{position:absolute;top:-17px;left:50%;transform:translateX(-50%);background:var(--naranja);color:var(--blanco);font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:1rem;line-height:1;letter-spacing:0.14em;padding:7px 22px 6px;white-space:nowrap;clip-path:polygon(10px 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,10px 100%,0 50%)}.ds-etiqueta h2{font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:2rem;line-height:1;color:var(--ultramar);text-align:center;margin:0}.ds-alimentos{list-style:none;margin:16px 0 0;padding:0}.ds-alimentos li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--filete);font:400 17px/1.4 var(--texto);color:var(--tinta)}.ds-alimentos li:last-child{border-bottom:0}.ds-alimentos li span:last-child{font-weight:600;color:var(--tinta-2)}.ds-para{margin:14px 0 0;text-align:center;font:700 0.8125rem var(--display);letter-spacing:0.16em;text-transform:uppercase;color:var(--verde)}"
+    },
+    {
+      "name": "Check Row",
+      "kind": "custom",
+      "refersTo": "check-row",
+      "description": "Tickable shopping or ingredient row under a module tab.",
+      "html": "<section class=\"ds-modulo\"><div class=\"ds-pestana\"><h3>Fruta</h3><span>1/2</span></div><button class=\"ds-art\" role=\"checkbox\" aria-checked=\"true\" onclick=\"this.setAttribute('aria-checked',this.getAttribute('aria-checked')!=='true')\"><span class=\"ds-caja\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m5 12.5 4.5 4.5L19 7.5\"/></svg></span><span class=\"ds-n\">Kiwis</span><span class=\"ds-q\">16</span></button><button class=\"ds-art\" role=\"checkbox\" aria-checked=\"false\" onclick=\"this.setAttribute('aria-checked',this.getAttribute('aria-checked')!=='true')\"><span class=\"ds-caja\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m5 12.5 4.5 4.5L19 7.5\"/></svg></span><span class=\"ds-n\">Mandarinas</span><span class=\"ds-q\">10</span></button></section>",
+      "css": ".ds-modulo{max-width:360px;background:var(--papel);padding:0 16px}.ds-pestana{display:flex;justify-content:space-between;align-items:baseline;border-bottom:3px solid var(--ultramar);padding-bottom:6px}.ds-pestana h3{margin:0;font-family:var(--display);text-transform:uppercase;font-weight:800;font-size:1.0625rem;line-height:1;letter-spacing:0.12em;color:var(--ultramar)}.ds-pestana span{font:700 0.9375rem/1 var(--display);letter-spacing:0.06em;color:var(--tinta-2)}.ds-art{display:flex;align-items:center;gap:14px;width:100%;min-height:56px;padding:8px 0;border:0;border-bottom:1px solid var(--filete);background:none;text-align:left;font:400 17px/1.4 var(--texto);color:var(--tinta);cursor:pointer;font-variant-numeric:tabular-nums}.ds-caja{width:28px;height:28px;border:2.5px solid var(--ultramar);border-radius:4px;display:grid;place-items:center;flex:none;color:var(--blanco);transition:background-color 140ms var(--ease),border-color 140ms var(--ease)}.ds-caja svg{width:20px;height:20px;opacity:0;transform:scale(0.4);transition:opacity 140ms var(--ease),transform 220ms var(--ease)}.ds-n{flex:1;font-weight:600}.ds-q{color:var(--tinta-2)}.ds-art[aria-checked=\"true\"] .ds-caja{background:var(--verde);border-color:var(--verde)}.ds-art[aria-checked=\"true\"] .ds-caja svg{opacity:1;transform:scale(1)}.ds-art[aria-checked=\"true\"] .ds-n,.ds-art[aria-checked=\"true\"] .ds-q{color:var(--apagado);text-decoration:line-through;text-decoration-thickness:1.5px;font-weight:400}.ds-art:focus-visible{outline:3px solid var(--naranja);outline-offset:2px}"
+    },
+    {
+      "name": "Tab Bar",
+      "kind": "nav",
+      "refersTo": "tab-bar",
+      "description": "Fixed ultramarine bottom navigation, active tab in orange with a top marker.",
+      "html": "<nav class=\"ds-tabbar\"><a href=\"#\" aria-current=\"page\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"7.5\"/><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><path d=\"M2 12h1.5M20.5 12H22\"/></svg><span>Hoy</span></a><a href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><rect x=\"3.5\" y=\"5\" width=\"17\" height=\"15\" rx=\"1.5\"/><path d=\"M3.5 10h17M8 3v4M16 3v4\"/></svg><span>Semana</span></a><a href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\"><path d=\"M4 9h16l-1.6 10.2a1 1 0 0 1-1 .8H6.6a1 1 0 0 1-1-.8L4 9Z\"/><path d=\"M8.5 9 12 4l3.5 5\"/></svg><span>Compra</span></a><a href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 4.5h10.5a2 2 0 0 1 2 2V20H7a2 2 0 0 1-2-2V4.5Z\"/></svg><span>Recetas</span></a></nav>",
+      "css": ".ds-tabbar{display:grid;grid-template-columns:repeat(4,1fr);height:64px;background:var(--ultramar);max-width:390px}.ds-tabbar a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;color:var(--ultramar-claro);font-family:var(--display);text-transform:uppercase;font-weight:700;font-size:0.8125rem;line-height:1;letter-spacing:0.1em;transition:color 160ms var(--ease)}.ds-tabbar svg{width:24px;height:24px}.ds-tabbar a:hover{color:var(--papel)}.ds-tabbar a[aria-current=\"page\"]{color:var(--naranja)}.ds-tabbar a[aria-current=\"page\"]::before{content:\"\";position:absolute;top:0;left:28%;right:28%;height:3px;background:var(--naranja)}.ds-tabbar a:focus-visible{outline:3px solid var(--naranja);outline-offset:-3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Crate Label and the Ledger",
+    "overview": "\n**Creative North Star: \"The Crate Label and the Ledger\"**\n\nTwo registers share one phone screen. The meal that is due now is printed like a Valencian orange-crate litho label: a white plate in a double ultramarine frame, an orange ribbon carrying the meal name, the dish set in heavy condensed capitals, a crate-red button to the recipe. Everything else is a plain, dense working list: hairline-ruled rows under small ruled tab headers, one text size per list, quantities flush right. The label is the only ornament; the ledger is what you actually use in the aisle.\n\nThe frame around both is an ultramarine shell, a solid header at the top and a fixed tab bar at the bottom, with warm near-white paper between them. Density is high and honest: rows are tall enough for a thumb (48 to 56px) but there is no card chrome, no grouped-list grey, no shadows. Rank inside a list comes from weight, case and colour, never from size changes. Motion is limited to 140 to 260ms state changes (ticks, toggles, the progress bar); nothing enters or animates on its own.\n\nThe system refuses the grey iOS grouped-list default: no inset rounded cards on a grey ground, no chevron-cell chrome.",
+    "keyCharacteristics": [
+      "Ultramarine shell top and bottom; paper ground between.",
+      "One label plate per screen, on Hoy and recipe detail only.",
+      "Hairline-ruled lists under 3px ultramarine tab rules.",
+      "Barlow Condensed 800 uppercase for every heading, ribbon, button and tab; Barlow for reading text.",
+      "Leaf green means done; crate red means the primary action; orange means \"now\" and \"active\".",
+      "Flat: depth comes from frames and rules, never shadows."
+    ],
+    "rules": [
+      {
+        "name": "The Four Inks Rule",
+        "body": "Each saturated ink has one job: ultramarine builds structure, orange marks now and active, green marks done, red marks the primary action. A colour never borrows another's job.",
+        "section": "colors"
+      },
+      {
+        "name": "The Orange-Is-Not-Text Rule",
+        "body": "Valencia Orange is a ground and a marker on paper. Orange words on paper use Burnt Orange Ink.",
+        "section": "colors"
+      },
+      {
+        "name": "The One-Size List Rule",
+        "body": "Inside a list every row uses one text size. Rank by weight (600 name, 400 detail), case and ink, never by a second size.",
+        "section": "typography"
+      },
+      {
+        "name": "The Condensed-Caps-Only Rule",
+        "body": "Barlow Condensed is always uppercase and always 700 or 800. It never sets running text.",
+        "section": "typography"
+      },
+      {
+        "name": "The Printed-Depth Rule",
+        "body": "If something must stand forward, give it a frame or a ground, not a shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Plate Rule",
+        "body": "The double-rule frame belongs to the label plate alone, and a screen shows at most one plate (Hoy's current meal, a recipe's header). Lists never get it.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do keep the ultramarine shell at both ends of every screen: header on top, 64px tab bar fixed below.",
+      "Do put every list under a module tab with its 3px ultramarine rule, and separate rows with 1px Hairline only.",
+      "Do keep one text size per list and rank with weight (600 vs 400), case and ink.",
+      "Do right-align quantities in Second Ink with tabular numerals.",
+      "Do show bought or done items as Spent Grey, 400 weight, struck through; leaf green fills the box.",
+      "Do keep touch targets at 48px or taller (56px for shopping rows).",
+      "Do limit motion to 140 to 260ms state changes on the shared ease (cubic-bezier(0.16, 1, 0.3, 1)), and drop it under reduced motion."
+    ],
+    "donts": [
+      "Don't use the double-rule frame or the ribbon anywhere but the label plate, and never show two plates on one screen.",
+      "Don't add shadows, inset rounded cards, or a grey grouped-list ground.",
+      "Don't set orange text on paper; use Burnt Orange Ink.",
+      "Don't use crate red for anything but the primary action, destructive confirm and navigation arrows, or green for anything but done and progress.",
+      "Don't set running text in Barlow Condensed or in capitals.",
+      "Don't reuse the shipped white-on-orange lettering (ribbon, badge) as a pairing: it measures 2.8:1 and is an open contrast defect, not a rule."
+    ]
+  }
+}
